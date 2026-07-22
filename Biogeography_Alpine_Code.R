@@ -13,6 +13,12 @@ corrplot(alpinecor, method = "circle", type = "lower", diag = FALSE,
          tl.cex = .5, tl.srt = 45, addCoef.col = "black")
 
 ##run multiple linear regression to assess relationships between variables
+
+#####Scaling data to Z-scores
+numericalpine_scaled <- scale(numeric_alpine)
+print(numericalpine_scaled)
+numericalpine_scaled <- data.frame(numericalpine_scaled)
+
 model2 <- lm(cbind(alpinespprich, hikecompleted) ~ logarea + connectivity + 
                thruhikedistance)
 
